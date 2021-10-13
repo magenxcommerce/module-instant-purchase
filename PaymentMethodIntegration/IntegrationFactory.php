@@ -65,13 +65,13 @@ class IntegrationFactory
     /**
      * Reads value from config.
      *
-     * @param array $config
+     * @param $config
      * @param string $field
      * @param string $default
      * @return string
      */
     private function extractFromConfig($config, string $field, string $default): string
     {
-        return $config[$field] ?? $default;
+        return isset($config[$field]) ? $config[$field] : $default;
     }
 }
